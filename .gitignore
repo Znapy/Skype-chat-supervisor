@@ -1,4 +1,4 @@
 !.gitignore
-additional_ignored
-Skype-chat-supervisor/debug/*
-Skype-chat-supervisor/release/*
+Skype-chat-supervisor-shadow-build/*
+Skype-chat-supervisor/*.o
+Skype-chat-supervisor/moc_*

@@ -11,8 +11,18 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    skypeX11.cpp \
+    skypeWin.cpp \
+    skype.cpp \
+    skypeCommand.cpp \
+    xmessages.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    application.h \
+    skypeComm.h \
+    skype.h \
+    skypeCommand.h \
+    xmessages.h
 
-FORMS    += mainwindow.ui
+FORMS    +=
