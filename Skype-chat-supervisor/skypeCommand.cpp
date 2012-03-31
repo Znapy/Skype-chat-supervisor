@@ -229,10 +229,10 @@ bool skypeResponse::parse(const QString &message) {
     }
   }
 
-  if ( msg.indexOf("MESSAGE ") == 0 ) {
+  if ( msg.indexOf("CHATMESSAGE ") == 0 ) {
     Type = SK_CHATMESSAGE;
 
-    exp.setPattern("MESSAGE ([^ ]*) ([^ ]*) (*)");
+    exp.setPattern("CHATMESSAGE ([^ ]*) ([^ ]*) (.*)");
     if ( exp.exactMatch(msg) ) {
       list = exp.capturedTexts();
       ChatMessageId = list[1];

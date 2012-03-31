@@ -1,4 +1,5 @@
 !.gitignore
-Skype-chat-supervisor-shadow-build/*
+Skype-chat-supervisor-*
 Skype-chat-supervisor/*.o
 Skype-chat-supervisor/moc_*
+Skype-chat-supervisor/Skype-chat-supervisor.pro.user

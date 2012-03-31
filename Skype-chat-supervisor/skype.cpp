@@ -90,7 +90,7 @@ void skype::processMessage(const QString &message) {
   if ( cmd.type() == SK_PING ) { 
     pingCounter++;
   }else {
-      qDebug() << "bad news";
+//      qDebug() << "bad news";
   }
 
   if ( cmd.type() == SK_CONTACT_LIST ) {
@@ -211,7 +211,7 @@ bool skype::doCommand(QString cmd, bool blocking) {
   /*qDebug() << "Doing command:" << cmd;*/
   QString cID = skypeCommand::prependID( cmd );
   QString ID = skypeCommand::getID( cID );
-  sk.sendMsgToSkype( cID );
+  sk.sendMsgToSkype( cmd );
   if ( blocking && waitingForResponse ) { 
     qDebug() << "********************************************************************";
     qDebug() << "WARNING:: can't wait for response to "<< cID <<" already waiting for:" <<waitForResponseID;

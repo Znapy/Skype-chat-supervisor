@@ -34,8 +34,8 @@ WId skypeComm::main_window = 0;
 
 skypeComm::skypeComm() { 
   if ( attachMSG == 0 || discoverMSG == 0 ) { 
-    attachMSG=RegisterWindowMessage("SkypeControlAPIAttach");
-    discoverMSG=RegisterWindowMessage("SkypeControlAPIDiscover");
+    attachMSG=RegisterWindowMessage(L"SkypeControlAPIAttach");
+    discoverMSG=RegisterWindowMessage(L"SkypeControlAPIDiscover");
   }
   if ( mainWin == NULL ) {
       mainWin = new QWidget();
@@ -54,7 +54,7 @@ skypeComm::skypeComm() {
 void skypeComm::sendMsgToSkype(const QString &message) {
   COPYDATASTRUCT copyData;
   QByteArray tmp;
-  qDebug()<<"SENDING MESSAGE:"<<message;
+  //qDebug()<<"SENDING MESSAGE:"<<message;
 
   if ( refused || tryLater ) return;
   if ( ! connected ) attachToSkype();
@@ -88,7 +88,7 @@ bool skypeComm::attachToSkype(int TimeOut) {
   if ( TimeOut > 0 ) {
     QTimer::singleShot(TimeOut, this, SLOT(timeOut()));
     waitingForConnect = true;
-    int result = localEventLoop.exec();
+    localEventLoop.exec();
     waitingForConnect = false;
     if ( connected ) emit attachedToSkype();
   };

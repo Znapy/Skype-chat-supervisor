@@ -35,7 +35,7 @@ class skypeComm : public QObject {
 	  static QWidget *mainWin;
 	  static WId main_window;
 	  bool connected, refused, tryLater;
-	  static UINT attachMSG, discoverMSG;
+      static UINT attachMSG, discoverMSG;
 
 	  QEventLoop localEventLoop;
 	  QTimer *msgTimer;
